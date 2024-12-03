@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carslot.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Drive and Dine</title>
+</head>
+
+<body>
+    <!-- Bootstrap Container for responsive layout -->
+    <div class="container text-center my-4">
+        <h1>Drive and Dine</h1>
+    </div>
+
+    <div class="container d-flex justify-content-center display">
+        <div class="row">
+            <!-- 8 Display-Only Slots (non-clickable) -->
+            <div class="col-3 box" id="slot-1-display">
+                <i class="bx bx-car" id="car-1-display"></i> 1
+            </div>
+            <div class="col-3 box" id="slot-2-display">
+                <i class="bx bx-car" id="car-2-display"></i> 2
+            </div>
+            <div class="col-3 box" id="slot-3-display">
+                <i class="bx bx-car" id="car-3-display"></i> 3
+            </div>
+            <div class="col-3 box" id="slot-4-display">
+                <i class="bx bx-car" id="car-4-display"></i> 4
+            </div>
+            <div class="col-3 box" id="slot-5-display">
+                <i class="bx bx-car" id="car-5-display"></i> 5
+            </div>
+            <div class="col-3 box" id="slot-6-display">
+                <i class="bx bx-car" id="car-6-display"></i> 6
+            </div>
+            <div class="col-3 box" id="slot-7-display">
+                <i class="bx bx-car" id="car-7-display"></i> 7
+            </div>
+            <div class="col-3 box" id="slot-8-display">
+                <i class="bx bx-car" id="car-8-display"></i> 8
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center align-items-center my-4">
+        <div class="row text-center">
+            <div class="col-4">
+                <button class=" btn-primary w-100" data-bs-toggle="modal" data-bs-target="#reserveModal">Reserve</button>
+            </div>
+            <div class="col-4">
+                <button class=" btn-success w-100" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
+            </div>
+            <div class="col-4">
+                <button class=" btn-info w-100" data-bs-toggle="modal" data-bs-target="#viewTokenModal">View Token</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Reserve -->
+    <div class="modal fade" id="reserveModal" tabindex="-1" aria-labelledby="reserveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reserveModalLabel">Reserve Slot</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="slot" class="form-label">Select Slot Number</label>
+                            <!-- Slot Selection Grid -->
+                            <div class="container d-flex justify-content-center">
+                                <div class="row">
+                                    <!-- 8 Slots, clicking a slot will select it -->
+                                    <div class="col-3 box" id="slot-1" onclick="selectSlot(1)">
+                                        <i class="bx bx-car" id="car-1"></i> 1
+                                    </div>
+                                    <div class="col-3 box" id="slot-2" onclick="selectSlot(2)">
+                                        <i class="bx bx-car" id="car-2"></i> 2
+                                    </div>
+                                    <div class="col-3 box" id="slot-3" onclick="selectSlot(3)">
+                                        <i class="bx bx-car" id="car-3"></i> 3
+                                    </div>
+                                    <div class="col-3 box" id="slot-4" onclick="selectSlot(4)">
+                                        <i class="bx bx-car" id="car-4"></i> 4
+                                    </div>
+                                    <div class="col-3 box" id="slot-5" onclick="selectSlot(5)">
+                                        <i class="bx bx-car" id="car-5"></i> 5
+                                    </div>
+                                    <div class="col-3 box" id="slot-6" onclick="selectSlot(6)">
+                                        <i class="bx bx-car" id="car-6"></i> 6
+                                    </div>
+                                    <div class="col-3 box" id="slot-7" onclick="selectSlot(7)">
+                                        <i class="bx bx-car" id="car-7"></i> 7
+                                    </div>
+                                    <div class="col-3 box" id="slot-8" onclick="selectSlot(8)">
+                                        <i class="bx bx-car" id="car-8"></i> 8
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paymentModal">Pay now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Payment Confirmation -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Confirm Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p><strong>₹100</strong> will be charged for this transaction.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="confirmPaymentBtn">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Order Now -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Order Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Token number input field -->
+                    <div class="mb-3">
+                        <label for="tokenNumber" class="form-label">Enter Token Number</label>
+                        <input type="text" class="form-control" id="tokenNumber" placeholder="Enter your token number">
+                       
+                    </div>
+    
+                 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="confirmOrderBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Modal for View Token -->
+    <div class="modal fade" id="viewTokenModal" tabindex="-1" aria-labelledby="viewTokenModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="viewTokenModalLabel">View Token</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    
+                    <p>X-X-X-X-X</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+let selectedSlots = [];
+let isPaymentConfirmed = false; // Flag to track if payment is confirmed
+
+// Function to handle slot selection
+function selectSlot(slotNumber) {
+    // Check if the slot is already selected
+    const index = selectedSlots.indexOf(slotNumber);
+
+    // If it's already selected, remove it from the selectedSlots array
+    if (index > -1) {
+        selectedSlots.splice(index, 1);
+
+        // Deselect the slot in clickable section
+        document.getElementById(`slot-${slotNumber}`).classList.remove('slot-selected');
+        document.getElementById(`car-${slotNumber}`).style.color = '';  // Reset color in clickable section
+
+        // Deselect the slot in the display section
+        document.getElementById(`car-${slotNumber}-display`).style.color = '';  // Reset color in display section
+    } else {
+        // Otherwise, add it to the selectedSlots array
+        selectedSlots.push(slotNumber);
+
+        // Select the slot in clickable section
+        document.getElementById(`slot-${slotNumber}`).classList.add('slot-selected');
+        document.getElementById(`car-${slotNumber}`).style.color = 'red';  // Change car icon color in clickable section
+
+        // Update the display-only section to reflect the selected slot
+        updateDisplaySlot(slotNumber);
+    }
+}
+
+// Function to update the display-only section after a selection
+function updateDisplaySlot(slotNumber) {
+    // Display the selected slots but don't change colors yet
+    if (!isPaymentConfirmed) {
+        selectedSlots.forEach(slot => {
+            document.getElementById(`car-${slot}-display`).style.color = '';  // Keep the color unchanged until payment is confirmed
+        });
+    }
+}
+
+// Function to handle payment confirmation
+document.getElementById('confirmPaymentBtn').addEventListener('click', function () {
+    // Mark the payment as confirmed
+    isPaymentConfirmed = true;
+
+    // Change the color of the selected slots
+    selectedSlots.forEach(slot => {
+        document.getElementById(`car-${slot}-display`).style.color = 'red';  // Highlight selected slots in display section after payment
+    });
+
+    // Show the payment success message
+    alert('Payment Successful!');
+
+    // Optionally, you can hide the modal after payment is confirmed
+    const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+    paymentModal.hide();  // This will close the modal
+
+    // You can also reset or perform any additional tasks here after payment
+});
+
+
+    </script>
+
+</body>
+
+</html>
