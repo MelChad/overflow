@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Cafe</title>
+</head>
+<body>
+    <div class="landing-page">
+        <header class="py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a href="#" class="logo"><b>OverFlow</b></a>
+                
+                <!-- Navigation Menu for Larger Screens -->
+                <ul class="links list-unstyled d-flex gap-3 mb-0 d-none d-md-flex">
+                    <li><a href="#" class="text-dark text-decoration-none">Home</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">About Us</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Menu</a></li>
+                    <li><a href="#" class="text-decoration-none" style="color: white;">Get Started</a></li>
+                </ul>
+                
+                <!-- Hamburger Menu for Mobile (Hidden on desktop) -->
+                <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Collapsable Mobile Menu -->
+        <div class="collapse d-md-none" id="navbarNav">
+            <ul class="links list-unstyled text-center p-3 mb-0">
+                <li><a href="#" class="text-dark text-decoration-none">Home</a></li>
+                <li><a href="#" class="text-dark text-decoration-none">About Us</a></li>
+                <li><a href="#" class="text-dark text-decoration-none">Menu</a></li>
+                <li><a href="#" class="text-decoration-none" style="color: white;">Get Started</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <!-- Text content column -->
+                    <div class="col-12 col-md-6">
+                        <div class="info">
+                            <h1 class="fw-bold text-dark">Welcome to OverFlow</h1>
+                            <p class="lead">At our cafe, we offer a variety of options to suit your dining preferences. Whether you prefer the cozy atmosphere of our indoor dining area or the convenience of our drive-in service, we’ve got you covered!</p>
+                            <p class="lead">Enjoy freshly brewed coffee, delicious meals, and a friendly atmosphere that will make you feel right at home. We cater to every mood and every moment.</p>
+                        </div>
+                        <div class="d-flex justify-content-md-start justify-content-center gap-3">
+                            <a href="#container2"><button class="custom-btn">Get Started</button></a>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Image column -->
+                    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                        <dotlottie-player src="https://lottie.host/ecea2ec5-4123-4508-becc-f5ec4a6db149/ZWqfOAnHUB.lottie" background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dine-dash" id="container2">
+        <div class="container my-5">
+            <div class="row">
+                <!-- Left Column: DotLottie animation -->
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4">
+                    <dotlottie-player src="https://lottie.host/97755bcd-2e56-4ce0-abb3-cb18492abdbf/xB6Qkjg0YW.lottie" background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player>
+                </div>
+
+                <!-- Right Column: Dine-in or Drive-in description -->
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center mb-4">
+                    <h2 class="fw-bold text-dark">Dine-In or Drive-In: Your Choice</h2>
+                    <p class="lead">Whether you're in the mood to sit and enjoy your meal in our cozy indoor atmosphere, or prefer the convenience of our drive-in service, we have you covered. Choose what suits you best!</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <!-- Dine-In Button -->
+                        <button class="custom-btn">Dine-In</button>
+                        <!-- Drive-In Button -->
+                        <button class="custom-btn">Drive-In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
